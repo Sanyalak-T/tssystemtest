@@ -1,0 +1,48 @@
+<app-header></app-header>
+<!-- <mat-card>
+  <form class="create-form">
+    <mat-form-field class="company-create-form-full-width">
+      <mat-label>Company Name</mat-label>
+      <input matInput type="text" placeholder="Company Name">
+    </mat-form-field><br>
+    <mat-form-field class="company-create-form-full-width">
+      <mat-label>Remark</mat-label>
+      <input matInput type="text" placeholder="Remark">
+    </mat-form-field><br>
+    <button mat-raised-button color="accent" routerLink="/companylist">Save</button>&nbsp;
+    <button mat-raised-button color="accent" routerLink="/companylist">Cancel</button>
+  </form>
+</mat-card> -->
+<mat-toolbar>
+  <span>Company New</span>
+  <span class="header-spacer"></span>
+  <button mat-flat-button color="primary" routerLink="/companylist">Back to Company List</button>
+</mat-toolbar>
+
+<mat-card>
+  <form (submit)="onAddCompany(postForm)" #postForm="ngForm">
+    <mat-form-field>
+      <input matInput
+      type="text"
+      name="companyname"
+      ngModel
+      required
+      placeholder="Company"
+      #companyname="ngModel">
+      <mat-error *ngIf="companyname.invalid">please enter data</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput
+      rows="4"
+      name="remark"
+      ngModel
+      required
+      placeholder="Remark"
+      #remark="ngModel"></textarea>
+      <mat-error *ngIf="remark.invalid">please enter a post content</mat-error>
+    </mat-form-field>
+    <button mat-raised-button
+      color="primary"
+      type="submit">Save</button>
+  </form>
+</mat-card>

@@ -1,0 +1,42 @@
+.icontoolbar {
+  display: inline;;
+}
+.header-spacer {
+  flex: 1 1 auto;
+}
+/* mat-card {
+  margin: auto;
+  margin-top: 120px;
+  min-width: 150px;
+  max-width: 500px;
+}
+.create-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.company-create-form-full-width {
+  width: 100%;
+}
+
+.buttonsave {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+} */
+mat-card {
+  width: 90%;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mat-form-field,
+textarea {
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  display: block;
+  width: 100%;
+}

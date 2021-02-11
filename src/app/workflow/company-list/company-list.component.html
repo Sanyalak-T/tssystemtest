@@ -1,0 +1,95 @@
+<app-header></app-header>
+<mat-toolbar>
+  <span>Company List</span>
+  <span class="header-spacer"></span>
+  <button mat-flat-button color="primary" routerLink="/companycreate">Add Company</button>
+</mat-toolbar>
+<!--
+<table>
+  <tr>
+    <th>No.</th>
+    <th>Company Name</th>
+    <th>Remark</th>
+    <th>Action</th>
+  </tr>
+  <tr>
+    <td>1.</td>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>
+      <a routerLink="/companycreate"><mat-icon>edit</mat-icon></a>
+      <a routerLink="/companylist"><mat-icon>delete</mat-icon></a>
+    </td>
+  </tr>
+  <tr>
+    <td>2.</td>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>
+      <a routerLink="/companycreate"><mat-icon>edit</mat-icon></a>
+      <a routerLink="/companylist"><mat-icon>delete</mat-icon></a>
+    </td>
+  </tr>
+  <tr>
+    <td>6.</td>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+    <td>
+      <a routerLink="/companycreate"><mat-icon color="accent">edit</mat-icon></a>
+      <a routerLink="/companylist"><mat-icon color="warn">delete</mat-icon></a>
+    </td>
+  </tr>
+</table> -->
+
+<!--test show data from file ts-->
+  <!-- <table mat-table [dataSource]="dataSource" *ngIf="dataSource.length > 0">
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef>No. </th>
+      <td mat-cell *matCellDef="let element">{{element.position}}</td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Company Name </th>
+      <td mat-cell *matCellDef="let element">{{element.name}}</td>
+    </ng-container>
+    <ng-container matColumnDef="remark">
+      <th mat-header-cell *matHeaderCellDef>Remark </th>
+      <td mat-cell *matCellDef="let element">{{element.remark}}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <p class="info-text mat-body-2" *ngIf="dataSource.length <= 0">No record in the table</p> -->
+<!-- <br>
+  <table mat-table [dataSource]="dataSource" *ngIf="dataSource.length>0">
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let no">{{no.position}}</td>
+    </ng-container>
+    <ng-container matColumnDef="companyname">
+      <th mat-header-cell *matHeaderCellDef>Company Name</th>
+      <td mat-cell *matCellDef="let company">{{company.companyname}}</td>
+    </ng-container>
+    <ng-container matColumnDef="remark">
+      <th mat-header-cell *matHeaderCellDef>Remark</th>
+      <td mat-cell *matCellDef="let remark">{{remark.remark}}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <p class="info-text mat-body-2" *ngIf="dataSource.length <= 0">No record in the table</p> -->
+
+<mat-accordion multi="true" *ngIf="companys.length > 0">
+  <mat-expansion-panel *ngFor="let company of companys">
+    <mat-expansion-panel-header>
+      {{company.companyname}}
+    </mat-expansion-panel-header>
+    <p>{{company.remark}}</p>
+    <mat-action-row>
+      <button mat-button color='primary'>EDIT</button>
+      <button mat-button color='warn'>DELETE</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+<p class="info-text mat-body-2" *ngIf="companys.length <= 0">No record that show</p>
+
+
